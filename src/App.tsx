@@ -32,7 +32,7 @@ function App() {
           </div>
         </section>
       </div>
-
+      
       <div className='social-media-icons-stack'>
         <a href="https://www.linkedin.com/in/bharadwajdaya/" target="_blank" rel="noopener noreferrer">
           <FaLinkedin className='icon linkedin-icon' />
