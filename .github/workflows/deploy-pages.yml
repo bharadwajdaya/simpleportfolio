@@ -1,4 +1,4 @@
-name: Build and deploy to GitHub Pages
+name: Build and deploy to GitHub Pages (Vite-friendly)
 
 on:
   push:
@@ -9,17 +9,25 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  NODE_VERSION: 18
+
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Use Node.js
+      - name: Show runner info (debug)
+        run: |
+          echo "PWD: $(pwd)"
+          ls -la
+
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Install dependencies
         run: npm ci
@@ -27,14 +35,35 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Show build outputs (debug)
+        run: |
+          echo "Top-level files & folders:"
+          ls -la
+          echo "dist exists?"; [ -d dist ] && echo "YES" || echo "NO"
+          echo "build exists?"; [ -d build ] && echo "YES" || echo "NO"
+
+      - name: Determine publish directory
+        id: determine
+        run: |
+          if [ -d dist ]; then
+            echo "publish_dir=dist" >> $GITHUB_OUTPUT
+          elif [ -d build ]; then
+            echo "publish_dir=build" >> $GITHUB_OUTPUT
+          else
+            echo "No dist/ or build/ directory found. Printing package.json for debugging:"
+            cat package.json
+            echo "::error::No publish directory found - aborting"
+            exit 1
+          fi
+
       - name: Upload static files as artifact
         id: upload
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./build
+          path: ${{ steps.determine.outputs.publish_dir }}
 
   deploy:
-    needs: build
+    needs: build-and-deploy
     runs-on: ubuntu-latest
     environment:
       name: github-pages
