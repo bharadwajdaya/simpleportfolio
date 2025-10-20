@@ -33,16 +33,32 @@ function App() {
         </section>
       </div>
 
-      <div className='timeline-section'>
-        <div>
-          <div>College</div>
-          <div>2017</div>
-        </div>
-        <div>
-          <div>Work</div>
-          <div>2022</div>
-        </div>
+      <div className='about-section'>
+        <p className='about-me'>
+        I graduated in 2017 and began my career at Zoho, where I worked as a full-stack developer. Afterward, I took a three-year break to prepare for UPSC, during which I freelanced and built Android apps that reached over 100k downloads, along with a website for a transport company. Later, I joined Measured as a Technical Operations Engineer, working on data-driven applications. Having recently concluded my role there, I'm now focusing on strengthening my skills in backend development, data structures and algorithms, and system design — preparing for my next big opportunity in tech.</p>
+      </div>
 
+      <div className='timeline-section'>
+        <div className='timeline-item'>
+          <div className='timeline-title'>RMD Engineering College</div>
+          <div className='timeline-subtitle'>BE Electrical And Electronics Engineering</div>
+          <div className='timeline-time'>2013-2017</div>
+        </div>
+        <div className='timeline-item'>
+          <div className='timeline-title'>Zoho Corporation</div>
+          <div className='timeline-subtitle'>Member of Technical Staff</div>
+          <div className='timeline-time'>2017-2018</div>
+        </div>
+        <div className='timeline-item'>
+          <div className='timeline-title'>UPSC preparation</div>
+          <div className='timeline-subtitle'>Economics Sociology</div>
+          <div className='timeline-time'>2019-2021</div>
+        </div>
+        <div className='timeline-item'>
+          <div className='timeline-title'>Measured India private limited</div>
+          <div className='timeline-subtitle'>Technical Operations Engineer</div>
+          <div className='timeline-time'>2022-2025</div>
+        </div>
       </div>
       
       
