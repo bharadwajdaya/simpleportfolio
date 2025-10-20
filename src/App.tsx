@@ -32,6 +32,19 @@ function App() {
           </div>
         </section>
       </div>
+
+      <div className='timeline-section'>
+        <div>
+          <div>College</div>
+          <div>2017</div>
+        </div>
+        <div>
+          <div>Work</div>
+          <div>2022</div>
+        </div>
+
+      </div>
+      
       
       <div className='social-media-icons-stack'>
         <a href="https://www.linkedin.com/in/bharadwajdaya/" target="_blank" rel="noopener noreferrer">
@@ -44,6 +57,8 @@ function App() {
           <SiLeetcode className='icon leetcode-icon' />
         </a>
       </div>
+
+      
     </>
   )
 }

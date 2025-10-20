@@ -4,7 +4,10 @@
   box-sizing: border-box;
 }
 .top-section{
+  display: flex;
+  justify-content: space-between;
   position: relative;
+  align-items: flex-start;
 }
 .logo{
   display: flex;
@@ -12,7 +15,6 @@
 }
 .logo--section
 {
-  position: absolute;
   right:0;
   padding: 40px;
 }
@@ -37,7 +39,6 @@
 
 .fullname-section{
   font-size: 4rem;
-  position: absolute;
   padding: 40px;
 }
 .typewriter{
@@ -57,14 +58,17 @@
 
 
 .social-media-icons-stack {
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: row;
   gap: 20px;
-  align-items: center;
+  align-items: center; */
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
 
@@ -107,6 +111,8 @@
     text-align: center;
   }
 }
+
+
 
 
 
