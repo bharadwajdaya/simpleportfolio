@@ -84,6 +84,9 @@ function App() {
         <div>
           <img src='./images/skills/python.jpeg' alt='Javascript'/>
         </div>
+        <div>
+          <img src='./images/skills/springboot.png' alt='Javascript'/>
+        </div>
       </div>
 
       <div>
