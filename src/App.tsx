@@ -62,6 +62,35 @@ function App() {
       </div>
       
       
+      
+      <div>
+        <h2 className='heading-h2'>
+        Skills
+        </h2>
+      </div>
+      <div className='skills-session'>
+        <div>
+          <img src='./images/skills/java.png' alt='Javascript'/>
+        </div>
+        <div>
+          <img src='./images/skills/js.svg' alt='Javascript'/>
+        </div>
+        <div>
+          <img src='./images/skills/aws.png' alt='Javascript'/>
+        </div>
+        <div>
+          <img src='./images/skills/ts.png' alt='Javascript'/>
+        </div>
+        <div>
+          <img src='./images/skills/python.jpeg' alt='Javascript'/>
+        </div>
+      </div>
+
+      <div>
+        <h2 className='heading-h2'>
+        Profile
+        </h2>
+      </div>
       <div className='social-media-icons-stack'>
         <a href="https://www.linkedin.com/in/bharadwajdaya/" target="_blank" rel="noopener noreferrer">
           <FaLinkedin className='icon linkedin-icon' />
@@ -73,8 +102,6 @@ function App() {
           <SiLeetcode className='icon leetcode-icon' />
         </a>
       </div>
-
-      
     </>
   )
 }
